@@ -6,11 +6,9 @@ import { MedicineViewModel } from '../viewmodel/MedicineViewModel'
 import { Reminder } from './ReminderListPage'
 @Builder
 function buildText() {
-  Column() {
     Text($r('app.string.pill_dailydose'))
       .fontSize(26)
       .fontWeight(FontWeight.Bold)
-  }
 }
 
 @Entry
@@ -18,15 +16,14 @@ function buildText() {
 struct MainPage {
   private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
   private reminderId: number = -1;
-  @State reminderStatus: string | Resource = $r('app.string.ready');
   @State reminderTitle: string = '';
   @State reminderContent: string = '';
   @State reminderTime: string = '';
   @State tempReminderTitle: string = '';
   @State tempReminderContent: string = '';
-  @State tempReminderTime: string = '';
-  @State isTime: boolean = false;
-  @State notificationId: number = 1000;
+  private  tempReminderTime: string = '';
+  private isTime: boolean = false;
+  private notificationId: number = 1000;
   header: ComponentContent<Object> = new ComponentContent(this.getUIContext(), wrapBuilder(buildText));
   medicineViewModel: MedicineViewModel = new MedicineViewModel();
   pathStack: NavPathStack = new NavPathStack()

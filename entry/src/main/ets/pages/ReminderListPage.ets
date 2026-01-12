@@ -10,12 +10,10 @@ export function ReminderListPageBuilder() {
 
 @Builder
 function buildText() {
-  Column() {
     Text($r('app.string.active_reminders'))
       .fontSize(20)
       .fontWeight(FontWeight.Bolder)
       .fontColor(Color.White)
-  }
 }
 
 export class Reminder {
@@ -51,9 +49,9 @@ struct ReminderListPage {
       }) {
         ArcListItem() {
           if (this.params.latestStatus) {
-
-            Text(this.context.resourceManager
-              .getStringSync($r('app.string.last_action').id) + ' :' + this.params.latestStatus)
+            Text(
+              `${this.context.resourceManager.getStringSync($r('app.string.last_action').id)} : ${this.params.latestStatus}`
+            )
               .fontSize(13)
               .fontColor(Color.Red)
           }
@@ -63,8 +61,7 @@ struct ReminderListPage {
 
         ArcListItem() {
           if (this.params.latestTitle) {
-            Text(this.context.resourceManager
-              .getStringSync($r('app.string.last_reminder').id) + ' :' + this.params.latestTitle)
+            Text(`${this.context.resourceManager.getStringSync($r('app.string.last_reminder').id)} : ${this.params.latestTitle}`)
               .fontSize(13)
               .fontColor(Color.Yellow)
           }
@@ -91,7 +88,7 @@ struct ReminderListPage {
         .width('85%')
         .margin({ bottom: 10 })
 
-        ForEach(this.reminders, (reminder: reminderAgentManager.ReminderRequest, index: number) => {
+        ForEach(this.reminders, (reminder: reminderAgentManager.ReminderRequest) => {
 
           ArcListItem() {
             Column({ space: 4 }) {
@@ -114,7 +111,8 @@ struct ReminderListPage {
           }
           .width('85%')
           .margin({ bottom: 10 })
-        }, (reminder: reminderAgentManager.ReminderRequest, index: number) => `${reminder}${index}`)
+        }, (reminder: reminderAgentManager.ReminderRequest) => String(reminder.notificationId))
+
       }
       .height('100%')
       .width('100%')

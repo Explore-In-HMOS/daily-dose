@@ -2,14 +2,14 @@
 
 # Daily Dose
 
-**Daily-Dose** is a lightweight medication reminder app designed for **HarmonyOS NEXT wearable devices** using **ArkTS**.  
+**Daily-Dose** is a lightweight medication reminder app designed for **HarmonyOS NEXT wearable devices** using **ArkTS
+**.  
 It helps users schedule recurring daily medication times and receive notifications via alarm, sound, and vibration.
 
 Users can input the name of the medicine, a short description.  
 The app will trigger a local notification and vibration at the specified time.
 
 ---
-
 
 # Preview
 
@@ -22,9 +22,12 @@ The app will trigger a local notification and vibration at the specified time.
 ---
 
 # Use Cases
+
 1. **Request Notification Permission** :  App asks for notification permission when opened; user grants access.
-2. **Create Medicine Reminder** : User enters medicine name, message, and time on the main screen and saves the reminder.
-3. **Receive Reminder Notification** :  System shows a notification with a custom title and message at the scheduled time.
+2. **Create Medicine Reminder** : User enters medicine name, message, and time on the main screen and saves the
+   reminder.
+3. **Receive Reminder Notification** :  System shows a notification with a custom title and message at the scheduled
+   time.
 4. **Trigger Vibration Alert** :  Device vibrates when a reminder is triggered.
 5. **View Reminder List** : User views all upcoming reminders in a list screen.
 
@@ -46,11 +49,8 @@ The app will trigger a local notification and vibration at the specified time.
 - `ohos.permission.PUBLISH_AGENT_REMINDER`
 - `ohos.permission.KEEP_BACKGROUND_RUNNING`
 - `ohos.permission.VIBRATE`
-
----
-
-
 # Directory Structure
+
 ````
 entry/src/main/ets/
 ├── pages/
@@ -81,12 +81,14 @@ entry/src/main/ets/
 # Constraints and Restrictions
 
 ## Supported Device
+
 - Huawei Watch 5
+
 
 ---
 
-# License 
+# License
 
-DailyDose is distributed under the terms of the MIT License. 
+Daily Dose is distributed under the terms of the MIT License.
 
-See the [LICENSE](/LICENSE) for more information.
+See the [license](/LICENSE) for more information.
